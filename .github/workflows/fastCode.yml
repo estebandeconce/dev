@@ -7,9 +7,14 @@ on:
 jobs:
   hand-job:
     runs-on: ubuntu-latest
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    #here I want some env vars
+    env:
+      COUNTRY: Chile
+      USER: Esteban
     steps:
-      - uses: actions/checkout@v4
 
-      - name: Imprime Hola, Mundo!
-        run: echo Hello, world!
+      - name: Accediendo a la rama
+        uses: actions/checkout@v4
+
+      - name: Imprimiendo variables de entorno
+        run: echo "${{ env.COUNTRY }}, ${{ env.USER }}"
