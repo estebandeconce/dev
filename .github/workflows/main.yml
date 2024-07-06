@@ -1,2 +1,18 @@
 name: Testing actions
-on: push
+on: 
+  push:
+    branches: testing-gha
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Printing "Hello World"
+        run: echo "Hello World from testing-gha branch!"
+
+
