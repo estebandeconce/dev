@@ -11,7 +11,7 @@ jobs:
     env:
       COUNTRY: Chile
       USER: Esteban
-      ES_VIGENTE: false 
+      ES_VIGENTE: true
     steps:
 
       - name: Accediendo a la rama
