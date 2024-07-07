@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      COLOR: secrets.COLOR
+      COLOR: ${{ secrets.COLOR }}
       COUNTRY: Chile
       ES_VIGENTE: 1
-      PASS: secrets.PASSWORD
+      PASS: ${{ secrets.PASSWORD }}
       USER: Esteban
 
     steps:
