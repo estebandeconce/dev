@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      COLOR: secrets.COLOR
       COUNTRY: Chile
-      USER: Esteban
       ES_VIGENTE: 1
+      PASS: secrets.PASSWORD
+      USER: Esteban
 
     steps:
       - name: Accediendo a la rama
@@ -20,3 +22,6 @@ jobs:
       - name: Imprimiendo si ES_VIGENTE true. Actual ${{ env.ES_VIGENTE }}
         if: ${{ env.ES_VIGENTE == 1 }}
         run: echo "${{ env.COUNTRY }}, ${{ env.USER }}"
+
+      - name: Imprimiendo secretos
+        run: echo "${{ env.COLOR }}, ${{ env.PASS }}"
