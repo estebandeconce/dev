@@ -7,16 +7,16 @@ on:
 jobs:
   hand-job:
     runs-on: ubuntu-latest
-    #here I want some env vars
+
     env:
       COUNTRY: Chile
       USER: Esteban
-      ES_VIGENTE: true
-    steps:
+      ES_VIGENTE: 1
 
+    steps:
       - name: Accediendo a la rama
         uses: actions/checkout@v4
 
       - name: Imprimiendo si ES_VIGENTE true. Actual ${{ env.ES_VIGENTE }}
-        if: ${{ env.ES_VIGENTE == true }}
+        if: ${{ env.ES_VIGENTE == 1 }}
         run: echo "${{ env.COUNTRY }}, ${{ env.USER }}"
